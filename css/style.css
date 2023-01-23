@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+:root {
+    /*Colors*/
+    --Moderate-violet: hsl(263, 55%, 52%);
+    --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+
+    /*Nautral Colors*/
+    --Light-gray: hsl(0, 0%, 81%);
+    --Light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--Light-grayish-blue);
+    min-width: 375px;
+    max-width: 1440px;
+    min-height: 100vh;
+    padding: 4rem 1rem;
+    font-family: 'Barlow Semi Condensed';
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#container {
+    display: grid;
+    grid-template-columns: auto, minmax(375px, auto);
+    grid-template-rows: repeat(5, auto) minmax(200px, auto);
+    gap: 1rem;
+    grid-template-areas:
+        "card-1"
+        "card-2"
+        "card-3"
+        "card-4"
+        "card-5";
+}
+
+.card-1 {
+    grid-area: card-1;
+}
+
+.card-2 {
+    grid-area: card-2;
+}
+
+.card-3 {
+    grid-area: card-3;
+}
+
+.card-4 {
+    grid-area: card-4;
+}
+
+.card-5 {
+    grid-area: card-5;
+}
+
+.testemonial-card {
+    padding: 1.8rem;
+    border-radius: 0.5rem;
+}
+
+.testemonial-card--violet {
+    background-color: var(--Moderate-violet);
+}
+
+.testemonial-card--grey {
+    background-color: var(--Very-dark-grayish-blue);
+}
+
+.testemonial-card--white {
+    background-color: var(--White);
+}
+
+.testemonial-card--black {
+    background-color: var(--Very-dark-blackish-blue);
+}
+
+.testemonial-card__quote-img {
+    background-image: url(/images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: 90% 0;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.profile__avatar {
+    width: 2.4rem;
+    border-radius: 50%;
+    border: 2px solid;
+}
+
+.profile__avatar--violet-border {
+    border-color: var(--Moderate-violet);
+}
+
+.profile__avatar--grey-border {
+    border-color: var(--Very-dark-grayish-blue);
+}
+
+.profile__avatar--white-border {
+    border-color: var(--White);
+}
+
+.profile-id {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.profile-id__name {
+    color:var(--White);
+}
+
+.profile-id__name--grey {
+    color: var(--Very-dark-grayish-blue);
+}
+
+.profile-id__verified {
+    color: var(--White);
+    filter: opacity(50%);
+    font-size: 0.8rem;
+    font-weight: lighter;
+}
+
+.profile-id__verified--grey {
+    color: var(--Very-dark-grayish-blue);
+}
+
+.testemony {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.testemony__title {
+    color: var(--White);
+    font-weight: 600;
+    font-size: 1.3rem; 
+    line-height: 1.8rem;   
+    
+}
+
+.testemony__title--grey {
+    color: var(--Very-dark-grayish-blue);
+}
+
+.testemony__text {
+    color: var(--White);
+    filter: opacity(70%);
+    font-weight: lighter;
+}
+
+.testemony__text--grey {
+    color: var(--Very-dark-grayish-blue);
+}
+
+.attribution {
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+}
+
+.attribution__text {
+    color: var(--Very-dark-grayish-blue);
+}
+
+.attribution__link {
+    color: var(--Very-dark-blackish-blue);
+}
+
+@media screen and (min-width: 376px) and (max-width: 768.98px) {
+
+    #container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr) minmax(200px, auto);
+        grid-template-areas: 
+        "card-1 card-1"
+        "card-2 card-2"
+        "card-3 card-3"
+        "card-4 card-4"
+        "card-5 card-5";
+    }
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024.98px) {
+
+
+    #container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto) minmax(200px, auto);
+        grid-template-areas: 
+        "card-1 card-2"
+        "card-3 card-4"
+        "card-5 none";        
+    }
+
+}
+
+@media screen and (min-width: 1025px) {
+
+    #container {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, auto) minmax(200px, auto);
+        grid-template-areas: 
+        "card-1 card-1 card-2 card-5"
+        "card-3 card-4 card-4 card-5";        
+    }
+}
